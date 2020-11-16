@@ -8,6 +8,11 @@ public class GameSetupController : MonoBehaviour {
 
     private void CreatePlayer() {
         Debug.Log("Creating Player");
-        PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity);
+        if (PhotonNetwork.IsMasterClient) {
+            PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity);
+        }
+        else {
+            PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity);
+        }
     }
 }

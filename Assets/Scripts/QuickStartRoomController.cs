@@ -1,5 +1,7 @@
 ﻿using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class QuickStartRoomController : MonoBehaviourPunCallbacks {
     [SerializeField]
@@ -12,15 +14,29 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks {
         PhotonNetwork.RemoveCallbackTarget(this);
     }
 
-    public override void OnJoinedRoom() {
-        Debug.Log("Joined Room");
-        StartGame();
+    private void Update() {
+        //if (PhotonNetwork.PlayerList.Length > 1) {
+        //    StartGame();
+        //}
     }
 
+    public override void OnJoinedRoom() {
+        Debug.Log("Joined Room");
+        //StartGame();
+        if (PhotonNetwork.PlayerList.Length > 1) {
+            StartGame();
+        }
+    }
+    public override void OnPlayerEnteredRoom(Player newPlayer) {
+        if (PhotonNetwork.PlayerList.Length > 1) {
+            StartGame();
+        }
+    }
     private void StartGame() {
         if (PhotonNetwork.IsMasterClient) {
             Debug.Log("Starting Game");
             PhotonNetwork.LoadLevel(multiplayerSceneIndex);
         }
+        SceneManager.LoadScene("QuickNetworkGameScene");
     }
 }

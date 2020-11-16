@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/QuickNetworkLaunchScene.unity
+    guid: a0fcb14481b43c849b9b154ee4400161
+  - enabled: 1
+    path: Assets/Scenes/QuickNetworkGameScene.unity
+    guid: cb36f497f43b7944f8f296463b79fcd0
   m_configObjects: {}
