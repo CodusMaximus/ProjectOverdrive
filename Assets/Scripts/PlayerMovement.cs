@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Photon.Pun;
+
 public class PlayerMovement : MonoBehaviour {
 
     private PhotonView myView;
