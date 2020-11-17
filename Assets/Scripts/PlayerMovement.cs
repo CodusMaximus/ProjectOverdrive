@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public float HorizontalMove { get; private set; }
     public float VerticalMove { get; private set; }
-    public float Speed { get; private set; } = 1f;
+    public float Speed { get; private set; } = 0.05f;
 
     private void Start() {
         myView = GetComponent<PhotonView>();
