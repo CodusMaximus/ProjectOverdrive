@@ -13,13 +13,15 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void Update() {
-        if (myView.IsMine) {
-            HorizontalMove = Input.GetAxisRaw("Horizontal") * Speed;
-            VerticalMove = Input.GetAxisRaw("Vertical") * Speed;
+        if (!myView.IsMine && PhotonNetwork.IsConnected) {
+            return;
         }
-    }
 
-    void FixedUpdate() {
+        HorizontalMove = Input.GetAxisRaw("Horizontal") * Speed;
+        VerticalMove = Input.GetAxisRaw("Vertical") * Speed;
         transform.position += new Vector3(HorizontalMove, VerticalMove);
     }
+
+    //void FixedUpdate() {
+    //}
 }

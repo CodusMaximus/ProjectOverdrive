@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class QuickStartRoomController : MonoBehaviourPunCallbacks {
+
     [SerializeField]
     private int multiplayerSceneIndex;
 
@@ -14,15 +15,9 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks {
         PhotonNetwork.RemoveCallbackTarget(this);
     }
 
-    private void Update() {
-        //if (PhotonNetwork.PlayerList.Length > 1) {
-        //    StartGame();
-        //}
-    }
-
     public override void OnJoinedRoom() {
         Debug.Log("Joined Room");
-        //StartGame();
+
         if (PhotonNetwork.PlayerList.Length > 1) {
             StartGame();
         }
@@ -35,8 +30,10 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks {
     private void StartGame() {
         if (PhotonNetwork.IsMasterClient) {
             Debug.Log("Starting Game");
-            PhotonNetwork.LoadLevel(multiplayerSceneIndex);
+            PhotonNetwork.LoadLevel("QuickNetworkGameScene");
         }
-        SceneManager.LoadScene("QuickNetworkGameScene");
+        //SceneManager.LoadScene("QuickNetworkGameScene");
     }
+
+ 
 }

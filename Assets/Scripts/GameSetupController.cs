@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GameSetupController : MonoBehaviour {
     void Start() {
+
+
         CreatePlayer();
     }
 
