@@ -131,7 +131,6 @@ GameObject:
   m_Component:
   - component: {fileID: 12241768}
   - component: {fileID: 12241767}
-  - component: {fileID: 12241766}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -139,14 +138,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &12241766
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12241765}
-  m_Enabled: 1
 --- !u!20 &12241767
 Camera:
   m_ObjectHideFlags: 0
@@ -198,7 +189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12241765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -50}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -340,6 +331,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2975254390641821040, guid: 374be3b83d848ff478a0b26f46a53ae6,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975254390641821040, guid: 374be3b83d848ff478a0b26f46a53ae6,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874583332117747217, guid: 374be3b83d848ff478a0b26f46a53ae6,
+        type: 3}
+      propertyPath: viewIdField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6605153248963274154, guid: 374be3b83d848ff478a0b26f46a53ae6,
         type: 3}
       propertyPath: m_Name
@@ -360,5 +366,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7762906311858747811, guid: 374be3b83d848ff478a0b26f46a53ae6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 374be3b83d848ff478a0b26f46a53ae6, type: 3}
