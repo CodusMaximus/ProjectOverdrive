@@ -22,14 +22,6 @@ public class PlayerMovement : MonoBehaviour {
         VerticalMove = Input.GetAxisRaw("Vertical") * Speed;
         transform.position += new Vector3(HorizontalMove, VerticalMove);
 
-        //int RotationSpeed = 15;
-
-        //transform.Rotate(Vector3.forward * (RotationSpeed * Time.deltaTime));
-
-        //Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
     }
 
-    //void FixedUpdate() {
-    //}
 }
