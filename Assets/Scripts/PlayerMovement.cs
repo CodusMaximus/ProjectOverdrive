@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-    private PhotonView myView;
 
     public float HorizontalMove { get; private set; }
     public float VerticalMove { get; private set; }
     public float Speed { get; private set; } = 0.05f;
 
+    private PhotonView myView;
     private void Start() {
         myView = GetComponent<PhotonView>();
     }

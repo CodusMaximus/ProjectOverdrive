@@ -1,13 +1,24 @@
-﻿using UnityEngine;
+﻿using Photon.Pun;
+using UnityEngine;
 
 public class RotateToMouse : MonoBehaviour {
 
+    private PhotonView myView;
+    private void Start() {
+        myView = GetComponent<PhotonView>();
+    }
     void Update() {
-        // Get Angle in Radians
-        float AngleRad = Mathf.Atan2(Input.mousePosition.y - transform.position.y, Input.mousePosition.x - transform.position.x);
-        // Get Angle in Degrees
-        float AngleDeg = (180 / Mathf.PI) * AngleRad;
-        // Rotate Object
-        this.transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
+        if (!myView.IsMine && PhotonNetwork.IsConnected) {
+            return;
+        }
+
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = Camera.main.nearClipPlane;
+        Vector3 mouseInWorld = Camera.main.ScreenToWorldPoint(mousePos);
+
+        Vector3 lookAtVector = mouseInWorld - transform.position;
+        float angle = Mathf.Rad2Deg * Mathf.Atan2(lookAtVector.y, lookAtVector.x);
+        Quaternion newRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 300);
     }
 }
