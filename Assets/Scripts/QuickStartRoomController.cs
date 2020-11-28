@@ -32,7 +32,6 @@ public class QuickStartRoomController : MonoBehaviourPunCallbacks {
             Debug.Log("Starting Game");
             PhotonNetwork.LoadLevel("QuickNetworkGameScene");
         }
-        //SceneManager.LoadScene("QuickNetworkGameScene");
     }
 
  

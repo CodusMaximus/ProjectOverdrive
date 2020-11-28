@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/QuickNetworkLaunchScene.unity
-    guid: a0fcb14481b43c849b9b154ee4400161
+    path: Assets/Scenes/Menus/SplashScene.unity
+    guid: 9d11be1a33a6b4f4faa74e5dc2a56450
   - enabled: 1
-    path: Assets/Scenes/QuickNetworkGameScene.unity
-    guid: cb36f497f43b7944f8f296463b79fcd0
+    path: Assets/Scenes/Menus/MainMenuScene.unity
+    guid: 875fb6c2f2d26d64481c1c517dcb7517
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
